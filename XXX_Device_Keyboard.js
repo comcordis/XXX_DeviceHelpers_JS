@@ -42,8 +42,7 @@ var XXX_Device_Keyboard =
 	
 	parseKey: function (nativeKeyboardEvent)
 	{
-		var keyCode = window.event ? nativeKeyboardEvent.keyCode : nativeKeyboardEvent.which;
-								
+		var keyCode = nativeKeyboardEvent.charCode ? nativeKeyboardEvent.charCode : (nativeKeyboardEvent.which ? nativeKeyboardEvent.which : (nativeKeyboardEvent.keyCode ? nativeKeyboardEvent.keyCode : 0));
 		var key = '';
 		
 		var alpha = false;
